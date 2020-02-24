@@ -3,7 +3,9 @@ from operator import itemgetter
 
 
 def fitness(indi):
-    return sum(indi["gen"])
+    total = 0
+    total = sum(indi["gen"])
+    return total
 
 
 def individual(nb_feature, total_feature):
@@ -123,6 +125,6 @@ def evolution(nb_feature, total_feature, population_size, pc=0.8, pm=0.2, max_ge
                 off = mutation(population[i], total_feature=total_feature)
                 population.append(off)
         population = selection(population, population_size)
-        print("t =", t, "fitness =", population[0]["fitness"])
+        print("t =", t, "fitness =", population[0])
         t = t + 1
     return population[0]
